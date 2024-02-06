@@ -4,6 +4,8 @@
 :set scrolloff=5
 xnoremap p pgvy
 
+set clipboard+=unnamedplus
+
 " for nerd commenter
 noremap <C-_> :call nerdcommenter#Comment(0,"toggle")<CR>
 "noremap <C-_> :call NERDComment(0,"toggle")<CR>
