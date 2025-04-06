@@ -2,3 +2,5 @@
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 2. Open nvim, run PlugInstall
 3. Wait for it and enjoy
+
+Note: install wl-clipboard if using Wayland, xclip if using X11
