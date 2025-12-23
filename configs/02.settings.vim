@@ -5,6 +5,21 @@
 xnoremap p pgvy
 
 set clipboard+=unnamedplus
+let &t_SI .= "\e[?2004h"
+let &t_EI .= "\e[?2004l"
+
+" OSC 52 clipboard support
+let s:osc52 = "\e]52;c;"
+function! Osc52Yank() abort
+    let buffer = @"
+    let encoded = system('base64 | tr -d "\n"', buffer)
+    call chansend(v:stderr, s:osc52 . encoded . "\e\\")
+endfunction
+autocmd TextYankPost * if v:event.operator ==# 'y' | call Osc52Yank() | endif
+
+
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 " for nerd commenter
 noremap <C-_> :call nerdcommenter#Comment(0,"toggle")<CR>
