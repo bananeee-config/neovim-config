@@ -5,9 +5,10 @@
 xnoremap p pgvy
 
 set clipboard+=unnamedplus
+
+" Clipboard support for window terminal
 let &t_SI .= "\e[?2004h"
 let &t_EI .= "\e[?2004l"
-
 " OSC 52 clipboard support
 let s:osc52 = "\e]52;c;"
 function! Osc52Yank() abort
