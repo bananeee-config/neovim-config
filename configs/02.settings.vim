@@ -2,7 +2,7 @@
 :set number
 :set relativenumber
 :set scrolloff=5
-xnoremap p pgvy
+xnoremap p "_dP
 
 set clipboard+=unnamedplus
 
